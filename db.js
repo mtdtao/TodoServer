@@ -4,10 +4,10 @@ var sequelize;
 
 if (env === 'production') {
 	sequelize = new Sequelize(process.env.DATABASE_URL, {
-		'dialect' : 'postgres'
+		dialect : 'postgres'
 	})
 } else {
-	var sequelize = new Sequelize(undefined, undefined, undefined, {
+	sequelize = new Sequelize(undefined, undefined, undefined, {
 		'dialect' : 'sqlite',
 		'storage' : __dirname + '/data/todo.sqlite'
 	});
